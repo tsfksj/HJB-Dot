@@ -1,0 +1,45 @@
+digraph HJB{
+  edge [fontname = "Microsoft YaHei"];
+  node [fontname = "Microsoft YaHei"];
+  ShangKe[label = "上课"];
+  ShangKe_Noz[label = "等下一次"];
+  ShangKe_Z[label = "进美术教室"];
+
+  Phone_D[label = "开始录音"];
+  Work_Start[label = "开始做作业"];
+
+  HJB_Ma[label = "骂"];
+  HJB_Da[label = "打",fontcolor=Red];
+
+  HJB_Ma_Phone[label = "举报他"];
+  HJB_Ma_No[label = "在心里骂回去"];
+
+
+  HJB_Da_GZ[label = "大声叫"]//用棍子打
+  HJB_Da_GZ_Phone[label = "举报他"];
+  HJB_Da_GZ_No[label = "?"];
+
+  We_TiaoXin[label = "挑衅"];
+  SD_Start[label = "开始SD计划",fontcolor=Red,fontsize=24,fillcolor=Yellow];
+  SD_JS[label = "在教室里"];
+  SD_JS_Phone[label = "举报他"];
+  SD_JS_No[label = "?"];
+
+  ShangKe -> ShangKe_Noz[label = "HJB不在"];
+  ShangKe -> ShangKe_Z[label = "HJB在"];
+  ShangKe_Z -> Phone_D[label = "带了手机"]
+  Phone_D -> Work_Start;
+  ShangKe_Z -> Work_Start[label = "没带手机"];
+  Work_Start -> HJB_Ma[label = "HJB发现"];
+  Work_Start -> HJB_Da[label = "HJB发现"];
+  Work_Start -> We_TiaoXin[label = "HJB没发现"];
+  HJB_Ma -> HJB_Ma_Phone[label = "带了手机"];
+  HJB_Ma -> HJB_Ma_No[label = "没带手机"];
+  HJB_Da -> SD_Start[label = "推",fontcolor=Red];
+  HJB_Da -> HJB_Da_GZ[label = "用棍子打"];
+  HJB_Da_GZ -> HJB_Da_GZ_Phone[label = "带了手机"];
+  HJB_Da_GZ -> HJB_Da_GZ_No[label = "没带手机"];
+  SD_Start -> SD_JS;
+  SD_JS -> SD_JS_Phone[label = "带了手机"];
+  SD_JS -> SD_JS_No[label = "没带手机"];
+}
