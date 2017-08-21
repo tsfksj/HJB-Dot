@@ -25,6 +25,10 @@ digraph HJB{
   SD_JS_Phone[label = "举报他"];
   SD_JS_No[label = "?"];
 
+  SD_DO[label = "在教室门外"];
+  SD_DO_Han[label = "被推时大叫一声"];
+  SD_DO_Phone[label = "赵哥打开门，照相"];
+  SD_DO_No[label = "?"];
   ShangKe -> ShangKe_Noz[label = "HJB不在"];
   ShangKe -> ShangKe_Z[label = "HJB在"];
   ShangKe_Z -> Phone_D[label = "带了手机"]
@@ -42,4 +46,8 @@ digraph HJB{
   SD_Start -> SD_JS;
   SD_JS -> SD_JS_Phone[label = "带了手机"];
   SD_JS -> SD_JS_No[label = "没带手机"];
+  SD_Start -> SD_DO;
+  SD_DO -> SD_DO_Han;
+  SD_DO_Han -> SD_DO_Phone[label = "带了手机"];
+  SD_DO_Han -> SD_DO_No[label = "没带手机"];
 }
