@@ -20,9 +20,12 @@ digraph HJB{
   HJB_Da_GZ_No[label = "?"];
 
   We_TiaoXin[label = "挑衅"];
+  SD_JS_D[label = "摔倒"];
+  SD_DO_D[label = "摔倒"];
   SD_Start[label = "开始SD计划",fontcolor=Red,fontsize=24,fillcolor=Yellow];
   SD_JS[label = "在教室里"];
-  SD_JS_Phone[label = "举报他"];
+  SD_JS_Phone[label = "赵哥照相"];
+  SD_JS_J[label = "举报他"];
   SD_JS_No[label = "?"];
 
   SD_DO[label = "在教室门外"];
@@ -44,10 +47,13 @@ digraph HJB{
   HJB_Da_GZ -> HJB_Da_GZ_Phone[label = "带了手机"];
   HJB_Da_GZ -> HJB_Da_GZ_No[label = "没带手机"];
   SD_Start -> SD_JS;
-  SD_JS -> SD_JS_Phone[label = "带了手机"];
-  SD_JS -> SD_JS_No[label = "没带手机"];
+  SD_JS -> SD_JS_D;
+  SD_JS_D -> SD_JS_Phone[label = "带了手机"];
+  SD_JS_Phone -> SD_JS_J;
+  SD_JS_D -> SD_JS_No[label = "没带手机"];
   SD_Start -> SD_DO;
   SD_DO -> SD_DO_Han;
-  SD_DO_Han -> SD_DO_Phone[label = "带了手机"];
-  SD_DO_Han -> SD_DO_No[label = "没带手机"];
+  SD_DO_Han -> SD_DO_D;
+  SD_DO_D -> SD_DO_Phone[label = "带了手机"];
+  SD_DO_D -> SD_DO_No[label = "没带手机"];
 }
